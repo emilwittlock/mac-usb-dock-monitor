@@ -8,12 +8,12 @@ Usage:
 from setuptools import setup
 
 APP = ['index.py']
-DATA_FILES = []
+DATA_FILES = [('', ['config.ini'])]
 OPTIONS = {
     'argv_emulation': True,
     'iconfile': 'duck.icns',
     'plist': {
-        'CFBundleShortVersionString': '0.2.0',
+        'CFBundleShortVersionString': '0.2.1',
         'LSUIElement': True,
     },
     'packages': ['rumps'],
@@ -24,5 +24,5 @@ setup(
     name='Dock monitor',
     data_files=DATA_FILES,
     options={'py2app': OPTIONS},
-    setup_requires=['py2app'], install_requires=['rumps']
+    setup_requires=['py2app'], install_requires=['rumps', 'configparser']
 )
